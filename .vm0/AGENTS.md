@@ -1,13 +1,11 @@
-# External Agent Instructions
-
-## Global Rules
+# Global Rules
 
 * **Language**: https://github.com/highestop/highestop-agent/blob/main/rules/language.md
 * **Format**: https://github.com/highestop/highestop-agent/blob/main/rules/format.md
 * **Behavior**: https://github.com/highestop/highestop-agent/blob/main/rules/behavior.md
 * **Commit and Pull Request**: https://github.com/highestop/highestop-agent/blob/main/skills/code-committer/SKILL.md (use authorized Github account as author for commit, and `Co-Authored-By: Zero <zero@vm0.ai>` for co-authored info)
 
-## Github Repos
+# Github Repos
 
 * **Personal Agent Instructions**: https://github.com/highestop/nono
 * **VM0** (forked for development): https://github.com/highestop/vm0, https://github.com/highestop/vm0-skills
