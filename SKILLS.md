@@ -13,4 +13,4 @@
 
 ---
 
-*This document was automatically generated based on commit [`1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac`](https://github.com/highestop/personal-agent-instructions/commit/1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac).*
+*This document was automatically generated based on commit [`1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac`](https://github.com/highestop/nono/commit/1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac).*
