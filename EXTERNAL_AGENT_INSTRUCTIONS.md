@@ -7,7 +7,7 @@
 * **Behavior**: https://github.com/highestop/highestop-agent/blob/main/rules/behavior.md
 * **Commit and Pull Request**: https://github.com/highestop/highestop-agent/blob/main/skills/code-committer/SKILL.md
   * Use authorized Github account as author for commit.
-  * Use agent runtime info, e.g. `Zero <zero@vm0.ai>`, `Okou <okou@vm0.ai>`, `Claude <noreply@anthropic.com>` or `Codex <noreply@openai.com>`, for co-authored info.
+  * Use proper agent runtime for co-authored info, e.g. `Moxt <noreply@moxt.ai>`, `Zero <zero@vm0.ai>`, `Okou <okou@vm0.ai>`, `Claude <noreply@anthropic.com>` or `Codex <noreply@openai.com>`.
 
 ## Github Repos
 
