@@ -1,4 +1,4 @@
-# Personal Agent Instructions
+# Nono
 
 Personal agent instructions, rules, and reusable skills for Claude Code, Codex, and other AI agents.
 
@@ -7,7 +7,7 @@ Personal agent instructions, rules, and reusable skills for Claude Code, Codex, 
 Recommended setup:
 
 - Clone this project under `~/` and name the directory `.agents`, so global agent environments such as claw, claude, and codex can all pick it up.
-- In the directory where you usually keep projects, such as `~/Workspace`, create a `personal-agent-instructions` symlink that points to `~/.agents` for quick access to the Git project.
+- In the directory where you usually keep projects, such as `~/Workspace`, create a `nono` symlink that points to `~/.agents` for quick access to the Git project.
 - If you use zsh, add commonly used agent and workspace shortcuts to `~/.zshrc`:
 
   ```zsh
