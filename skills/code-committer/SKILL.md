@@ -20,15 +20,15 @@ Supported fields:
 
 | Field | Type | Description | Default |
 | - | - | - | - |
-| `gitUser.name` | `string` / `null` | Expected Git username | `null` |
-| `gitUser.email` | `string` / `null` | Expected Git email | `null` |
-| `coAuthors` | `string` / `string[]` / `null` | One or more co-authors, with each item containing only `<name> <email>` | `null` |
+| `git_user.name` | `string` / `null` | Expected Git username | `null` |
+| `git_user.email` | `string` / `null` | Expected Git email | `null` |
+| `co_authors` | `string` / `string[]` / `null` | One or more co-authors, with each item containing only `<name> <email>` | `null` |
 
 Single co-author configuration:
 
 ```json
 {
-  "coAuthors": "Codex <noreply@openai.com>"
+  "co_authors": "Codex <noreply@openai.com>"
 }
 ```
 
@@ -36,14 +36,14 @@ Multiple co-author configuration:
 
 ```json
 {
-  "coAuthors": [
+  "co_authors": [
     "Codex <noreply@openai.com>",
     "Claude <noreply@anthropic.com>"
   ]
 }
 ```
 
-Do not include the fixed `Co-Authored-By: ` prefix in configuration values. When `coAuthors` is configured, normalize a string to a single-item list and generate `Co-Authored-By: <name> <email>` for each item in configuration order. Do not append co-authors inferred from the current agent. When it is not configured, retain the default behavior of inferring a co-author from the current agent.
+Do not include the fixed `Co-Authored-By: ` prefix in configuration values. When `co_authors` is configured, normalize a string to a single-item list and generate `Co-Authored-By: <name> <email>` for each item in configuration order. Do not append co-authors inferred from the current agent. When it is not configured, retain the default behavior of inferring a co-author from the current agent.
 
 If the user temporarily overrides configuration in a request, ask whether to save it after completing the work. When saving, prefer `.agents/config/code-committer.config.json` unless the user specifies another agent directory. Do not commit configuration containing personal information to version control.
 
@@ -53,8 +53,8 @@ If the user temporarily overrides configuration in a request, ask whether to sav
 
 - Confirm that the current directory is a Git repository.
 - Check `git config user.name` and `git config user.email`.
-- Check only configured `gitUser` fields: validate `user.name` when `gitUser.name` is configured, and validate `user.email` when `gitUser.email` is configured. Do not require unconfigured fields. Stop and provide remediation commands when a configured field is missing or does not match.
-- When `gitUser.name` is not configured, derive the user identifier for the feature branch name in this order:
+- Check only configured `git_user` fields: validate `user.name` when `git_user.name` is configured, and validate `user.email` when `git_user.email` is configured. Do not require unconfigured fields. Stop and provide remediation commands when a configured field is missing or does not match.
+- When `git_user.name` is not configured, derive the user identifier for the feature branch name in this order:
   1. The current `git config user.name`
   2. The login of the account currently authenticated with `gh`, retrieved with `gh api user --jq '.login'`
 - If neither method provides a user identifier, ask the user. Do not silently write Git configuration.
@@ -84,7 +84,7 @@ If the user temporarily overrides configuration in a request, ask whether to sav
   - Examples: `chore(skills): update fetch article skill`, `feat: add article formatter`
 - Do not amend existing commits. Create a new commit.
 - Add co-authors at the end of the commit body:
-  - When `coAuthors` is configured, append every `Co-Authored-By: <name> <email>` trailer generated from the configuration.
+  - When `co_authors` is configured, append every `Co-Authored-By: <name> <email>` trailer generated from the configuration.
   - When it is not configured, infer the co-author from the current agent:
     - Claude: `Co-Authored-By: Claude <noreply@anthropic.com>`
     - Codex: `Co-Authored-By: Codex <noreply@openai.com>`
@@ -106,7 +106,7 @@ If the user temporarily overrides configuration in a request, ask whether to sav
   - Forked repository: push the feature branch to your fork, then create a cross-repository PR against the original repository with `gh pr create --repo <upstream-owner>/<upstream-repo> --head <fork-owner>:<feature-branch>`. You do not need to switch to the original repository owner's identity.
   - Non-forked repository: push the current feature branch, then use `gh pr create` to open a PR against the current repository.
 - State in the PR description that rebase merge is the default and request deletion of the feature branch after merge.
-- When `coAuthors` is configured, append every generated `Co-Authored-By: <name> <email>` trailer to the end of the PR description. When it is not configured, do not append inferred co-authors to the PR description.
+- When `co_authors` is configured, append every generated `Co-Authored-By: <name> <email>` trailer to the end of the PR description. When it is not configured, do not append inferred co-authors to the PR description.
 - Link any related issue in the PR.
 
 ### 6. Track the PR
