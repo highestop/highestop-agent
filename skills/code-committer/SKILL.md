@@ -122,7 +122,6 @@ If the user temporarily overrides configuration in a request, ask whether to sav
   2. Determine whether it is real, reasonable, and requires a fix, and explain the evidence
   3. Ask the user whether to fix or reject it
   4. If fixing it, create a new commit and continue tracking. If rejecting it, dismiss the review and provide a reason
-- If a serious issue has been fixed but review was skipped, trigger another review using the reviewer's convention, such as commenting `@codex review`.
 
 ### 7. Merge the PR
 
@@ -131,8 +130,7 @@ If the user temporarily overrides configuration in a request, ask whether to sav
 - If the user chooses to merge:
   - Prefer the merge queue when the project has one enabled
   - Use rebase merge by default, preserving every commit and its complete message and co-author trailers
-  - Use squash merge only when the user explicitly requests it or when the PR contains multiple small temporary commits that should be compressed
-    - When using squash merge, preserve all required `Co-Authored-By` trailers in the squash commit body
+  - When using squash merge if needed, preserve all required `Co-Authored-By` trailers in the squash commit body
   - Do not use a merge commit, to avoid branches in `main` history
   - Wait for the PR to merge successfully
   - Confirm that the remote feature branch has been deleted
