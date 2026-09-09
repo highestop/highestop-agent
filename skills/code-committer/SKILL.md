@@ -28,7 +28,7 @@ Single co-author configuration:
 
 ```json
 {
-  "coAuthors": "Zero <zero@vm0.ai>"
+  "coAuthors": "Codex <noreply@openai.com>"
 }
 ```
 
@@ -37,8 +37,8 @@ Multiple co-author configuration:
 ```json
 {
   "coAuthors": [
-    "Zero <zero@vm0.ai>",
-    "Moxt <noreply@moxt.ai>"
+    "Codex <noreply@openai.com>",
+    "Claude <noreply@anthropic.com>"
   ]
 }
 ```
