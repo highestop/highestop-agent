@@ -10,7 +10,8 @@
 | [mweb-to-obsidian-migrator](skills/mweb-to-obsidian-migrator/SKILL.md) | Migrate an MWeb library to an Obsidian vault by copying notes and attachments, recreating category paths, rewriting copied media links, and recording migration logs. Use when converting an MWeb root containing mainlib.db and docs/; never modify, move, or delete the original MWeb files. |
 | [open-meteo-forecast](skills/open-meteo-forecast/SKILL.md) | Query weather forecasts with the unauthenticated Open-Meteo Forecast API. Use for hourly or daily weather data such as temperature, precipitation, precipitation probability, and wind speed by coordinates or location; do not use for tasks requiring a commercial SLA, official weather alerts, or another specified weather provider. |
 | [steam-market-price-reporter](skills/steam-market-price-reporter/SKILL.md) | Query public Steam Community Market listings and report current lowest prices with optional volume-weighted historical medians in a compact table. Use for one or more exact market items, including Dota 2 cosmetics and RMB comparisons; do not use for private inventories, purchases, or claims about exact individual-sale minima. |
+| [weread](skills/weread/SKILL.md) | 微信读书（WeRead）助手，用于搜索图书、浏览书架及分组、查询阅读进度与统计，以及读取笔记、划线、书评和推荐。 |
 
 ---
 
-*This document was automatically generated based on commit [`1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac`](https://github.com/highestop/nono/commit/1e154f5fec4a5fc0dd7c4dcf2a51a0e35c7f7cac).*
+*This document was automatically generated based on commit [`1d638d0830a36d179b32f32da79e4c344a3510ac`](https://github.com/highestop/nono/commit/1d638d0830a36d179b32f32da79e4c344a3510ac).*
